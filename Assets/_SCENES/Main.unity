@@ -4700,5 +4700,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player02
       objectReference: {fileID: 0}
+    - target: {fileID: 4374891822720478454, guid: 6737f006fd5bbf14e842b59b8500e117,
+        type: 3}
+      propertyPath: m_Action.m_Id
+      value: ba7c1acc-737a-414c-bbc9-170e425d0abc
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374891822720478454, guid: 6737f006fd5bbf14e842b59b8500e117,
+        type: 3}
+      propertyPath: m_Action.m_Name
+      value: Action
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6737f006fd5bbf14e842b59b8500e117, type: 3}
