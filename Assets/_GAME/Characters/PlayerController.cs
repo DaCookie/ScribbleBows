@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Game
 {
@@ -10,6 +11,11 @@ namespace Game
     public class PlayerController : MonoBehaviour
     {
 
+        [Header("References")]
+
+        [SerializeField]
+        private InputActionAsset m_Actions = null;
+
         [Header("General Settings")]
 
         [SerializeField, Range(1, 2)]
@@ -20,28 +26,33 @@ namespace Game
         [SerializeField]
         private float m_Speed = 6f;
 
-        private void Update()
+        private void Awake()
         {
-            Move(Time.deltaTime);
+            InputActionMap playerMap = m_Actions.FindActionMap(m_PlayerID == 1 ? "Player" : "Player2");
+            playerMap.FindAction("Move").performed += OnMove;
+            playerMap.FindAction("Jump").performed += OnJump;
+            playerMap.FindAction("Throw").performed += OnThrow;
+            playerMap.Enable();
         }
 
-        public void Move(float _DeltaTime)
+        private void Update()
         {
-            float axis = 0f;
+            
+        }
 
-            if (Input.GetKey(KeyCode.Q))
-            {
-                axis = -1f;
-            }
-            else if(Input.GetKey(KeyCode.D))
-            {
-                axis = 1f;
-            }
+        private void OnMove(InputAction.CallbackContext _Context)
+        {
+            Debug.Log("MOVE " + name + " / " + _Context.ReadValue<Vector2>());
+        }
 
-            if(axis != 0f)
-            {
-                transform.position += Vector3.right * axis * m_Speed * _DeltaTime;
-            }
+        private void OnJump(InputAction.CallbackContext _Context)
+        {
+            Debug.Log("JUMP " + name);
+        }
+
+        private void OnThrow(InputAction.CallbackContext _Context)
+        {
+            Debug.Log("THROW " + name);
         }
 
     }

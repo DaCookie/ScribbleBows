@@ -7,10 +7,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 736231873174816600, guid: 1104fdca6b96d254b963b4f6809e6aa4,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 0cb59ceb-baa1-4518-a61a-0abeaabe882e
+      objectReference: {fileID: 0}
     - target: {fileID: 885432396356004099, guid: 1104fdca6b96d254b963b4f6809e6aa4,
         type: 3}
       propertyPath: m_Name
-      value: Player01 (1)
+      value: PF_Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857536269705664102, guid: 1104fdca6b96d254b963b4f6809e6aa4,
+        type: 3}
+      propertyPath: m_PlayerID
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3848031884844285608, guid: 1104fdca6b96d254b963b4f6809e6aa4,
         type: 3}
